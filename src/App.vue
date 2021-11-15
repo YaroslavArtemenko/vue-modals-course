@@ -68,6 +68,9 @@ export default {
         name: this.modalSecond.name,
         email: this.modalSecond.email
       })
+      this.modalSecond.name = ''
+      this.modalSecond.email = ''
+      this.modalSecond.show = false
     }
   }
 }
