@@ -5,22 +5,32 @@
 
       <section>
         <div class="container">
-          <h1>HELLO</h1>
-          <img alt="Vue logo" src="./assets/logo.png">
-        </div>
 
+          <button class="btn btnPrimary" @click="modalFirst = !modalFirst">Show first modal</button>
+          <!-- first modal -->
+          <Modal
+              title="First modal"
+              v-if="modalFirst"
+          >
+          </Modal>
+        </div>
       </section>
       
     </div>
-<!--    <footer></footer>-->
   </div>
 </template>
 
 <script>
 
-export default {}
+import Modal from "./components/Modal";
+export default {
+  components: {
+    Modal
+  },
+  data () {
+    return {
+      modalFirst: false
+    }
+  }
+}
 </script>
-
-<style>
-
-</style>

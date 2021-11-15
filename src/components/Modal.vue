@@ -1,14 +1,19 @@
 <template>
   <transition name="modal">
-    <div class="modal__wrapper" @click="$emit('close')">
-      <div class="modal-content" @click.stop="">
+    <div class="modal__wrapper">
+      <div class="modal-content">
+
+        <!-- header -->
         <div class="modal-header">
           <span class="modal-title"> {{ title }} </span>
-          <span class="button-close" @click="$emit('close')">×</span>
+          <span class="button-close">×</span>
         </div>
+
+        <!-- body -->
         <div class="modal-body">
-          <slot name="body">default body</slot>
+
         </div>
+
       </div>
     </div>
   </transition>
@@ -16,21 +21,12 @@
 
 <script>
 export default {
+  name: "Modal",
   props: {
     title: {
       type: String,
       required: true
     }
-  },
-  data () {
-    return {}
-  },
-  mounted () {
-    document.body.addEventListener('keyup', e => {
-      if (e.keyCode === 27) {
-        this.$emit('close')
-      }
-    })
   },
   computed: {},
   methods: {}
@@ -38,17 +34,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// Animation
-.modal-enter {
-  opacity: 0
-}
-.modal-leave-active {
-  opacity: 0
-}
-.modal-enter .modal-content,
-.modal-leave-active .modal-content {
-  transform: scale(1.2)
-}
 
 .modal__wrapper{
   display: flex;
@@ -58,8 +43,8 @@ export default {
   top: 0;
   bottom: 0;
   left: 0;
-  transition: opacity .2s ease;
   right: 0;
+  transition: opacity .2s ease;
   z-index: 998;
   background-color: rgba(00,00,00,.48);
 }
