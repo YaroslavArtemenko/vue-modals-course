@@ -40,8 +40,10 @@
 <!--          modal with validate-->
           <button class="btn btnPrimary" @click="modalValidate = !modalValidate">Show modal with form + Validate</button>
           <ModalValidate
-              v-if="modalValidate"
+              v-show="modalValidate"
+              @close="modalValidate = false"
           ></ModalValidate>
+
         </div>
       </section>
 
