@@ -6,9 +6,9 @@
     <div slot="body">
       <form @submit.prevent="">
         <label>Name:</label>
-        <input type="text" required>
+        <input type="text">
         <label>Email:</label>
-        <input type="email" required>
+        <input type="email">
         <button class="btn btnPrimary">Submit</button>
       </form>
     </div>
@@ -16,6 +16,9 @@
 </template>
 
 <script>
+
+import { required, minLength, email } from 'vuelidate/lib/validators'
+
 import Modal from "./UI/Modal";
 
 export default {
