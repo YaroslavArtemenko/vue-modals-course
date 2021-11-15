@@ -27,7 +27,7 @@
               @close="modalSecond.show = false"
           >
             <div slot="body">
-              <form>
+              <form @submit.prevent="">
                 <label>Name:</label>
                 <input type="text" v-model="modalSecond.name">
                 <label>Email:</label>
