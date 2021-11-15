@@ -27,7 +27,7 @@
               @close="modalSecond.show = false"
           >
             <div slot="body">
-              <form @submit.prevent="">
+              <form @submit.prevent="submitSecondForm">
                 <label>Name:</label>
                 <input type="text" v-model="modalSecond.name">
                 <label>Email:</label>
@@ -60,6 +60,14 @@ export default {
         name: '',
         email: ''
       }
+    }
+  },
+  methods: {
+    submitSecondForm () {
+      console.log({
+        name: this.modalSecond.name,
+        email: this.modalSecond.email
+      })
     }
   }
 }
