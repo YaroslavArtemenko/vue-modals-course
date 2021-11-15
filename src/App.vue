@@ -29,9 +29,9 @@
             <div slot="body">
               <form @submit.prevent="submitSecondForm">
                 <label>Name:</label>
-                <input type="text" v-model="modalSecond.name">
+                <input type="text" required v-model="modalSecond.name">
                 <label>Email:</label>
-                <input type="text" v-model="modalSecond.email">
+                <input type="email" required v-model="modalSecond.email">
                 <button class="btn btnPrimary">Submit</button>
               </form>
             </div>
