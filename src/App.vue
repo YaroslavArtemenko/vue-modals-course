@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-  <!-- <header></header> -->
+    <!-- <header></header> -->
     <div class="wrapper-content">
 
       <section>
@@ -27,14 +27,19 @@
               @close="modalSecond.show = false"
           >
             <div slot="body">
-<!--              <p>Text Text Text</p>-->
-              <button class="btn btnPrimary">Submit</button>
+              <form>
+                <label>Name:</label>
+                <input type="text" v-model="modalSecond.name">
+                <label>Email:</label>
+                <input type="text" v-model="modalSecond.email">
+                <button class="btn btnPrimary">Submit</button>
+              </form>
             </div>
           </Modal>
 
         </div>
       </section>
-      
+
     </div>
   </div>
 </template>
@@ -42,11 +47,12 @@
 <script>
 
 import Modal from "./components/Modal";
+
 export default {
   components: {
     Modal
   },
-  data () {
+  data() {
     return {
       modalFirst: false,
       modalSecond: {
