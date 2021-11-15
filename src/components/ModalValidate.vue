@@ -5,7 +5,7 @@
   >
 <!--    body-->
     <div slot="body">
-      <form @submit.prevent="">
+      <form @submit.prevent="onSubmit">
 
 <!--        name-->
         <div class="form-item" :class="{ errorInput: $v.name.$error }">
@@ -63,6 +63,18 @@ export default {
       email
     }
   },
+  methods: {
+    onSubmit () {
+      this.$v.$touch()
+      if (!this.$v.$invalid) {
+        const user = {
+          name: this.name,
+          email: this.email
+        }
+        console.log(user)
+      }
+    }
+  }
 }
 </script>
 
