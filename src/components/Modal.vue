@@ -11,7 +11,7 @@
 
         <!-- body -->
         <div class="modal-body">
-
+          <slot name="body"> default body </slot>
         </div>
 
       </div>
