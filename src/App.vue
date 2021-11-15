@@ -6,18 +6,32 @@
       <section>
         <div class="container">
 
-          <button class="btn btnPrimary" @click="modalFirst = !modalFirst">Show first modal</button>
           <!-- first modal -->
+          <button class="btn btnPrimary" @click="modalFirst = !modalFirst">Show first modal</button>
           <Modal
               title="First modal"
               v-show="modalFirst"
-              @close="modalFirst = !modalFirst"
+              @close="modalFirst = false"
           >
             <div slot="body">
               <p>Text Text Text</p>
               <button class="btn btnPrimary" @click="modalFirst = !modalFirst">Well Done</button>
             </div>
           </Modal>
+
+          <!-- second modal -->
+          <button class="btn btnPrimary" @click="modalSecond.show = !modalSecond.show">Show modal with form</button>
+          <Modal
+              title="Modal with form"
+              v-show="modalSecond.show"
+              @close="modalSecond.show = false"
+          >
+            <div slot="body">
+<!--              <p>Text Text Text</p>-->
+              <button class="btn btnPrimary">Submit</button>
+            </div>
+          </Modal>
+
         </div>
       </section>
       
@@ -34,7 +48,12 @@ export default {
   },
   data () {
     return {
-      modalFirst: false
+      modalFirst: false,
+      modalSecond: {
+        show: false,
+        name: '',
+        email: ''
+      }
     }
   }
 }
