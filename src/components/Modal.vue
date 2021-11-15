@@ -40,6 +40,15 @@ export default {
 
 <style lang="scss" scoped>
 
+//animation
+.modal-enter, .modal-leave-active {
+  opacity: 0;
+}
+.modal-enter .modal-content,
+.modal-leave-active .modal-content {
+  transform: scale(1.2);
+}
+
 .modal__wrapper{
   display: flex;
   justify-content: center;
